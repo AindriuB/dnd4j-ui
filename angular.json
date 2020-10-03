@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dnd4j-ui"
+    }
+  },
+  "defaultProject": "dnd4j-ui",
+  "cli": {
+    "analytics": "673c9cb2-d1ff-4f4b-baac-a5707d45e9e7"
+  }
 }
