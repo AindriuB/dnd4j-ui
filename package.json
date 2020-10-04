@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/dnd4j-ui/ --prod --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "docker": "docker build -t gcr.io/aindriu/dnd4j-ui .",
+    "docker-push": "docker push gcr.io/aindriu/dnd4j-ui",
     "postinstall": "ngcc"
   },
   "private": true,

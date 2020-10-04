@@ -8,12 +8,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemsComponent } from './items/items.component';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SpellsComponent } from './spells/spells.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ItemsComponent
+    ItemsComponent,
+    SpellsComponent
   ],
   imports: [
     BrowserModule,

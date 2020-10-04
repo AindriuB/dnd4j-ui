@@ -1,18 +1,15 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { element } from 'protractor';
-import { ApiService} from '../api-service.service';
-import { Item } from '../model/item';
-
-
+import { ApiService } from '../api-service.service';
+import { Spell } from '../model/spell';
 
 @Component({
-  selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.scss'],
+  selector: 'app-spells',
+  templateUrl: './spells.component.html',
+  styleUrls: ['./spells.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
@@ -21,24 +18,22 @@ import { Item } from '../model/item';
     ]),
   ],
 })
-export class ItemsComponent implements OnInit {
-  
+export class SpellsComponent implements OnInit {
+
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  
-  displayedColumns: string[] = ['name', 'type', 'category', 'weight', 'cost', 'source'];
-  expandedElement: Item | null;
+  displayedColumns: string[] = ['name', 'level','castTime','range', 'duration', 'school', 'source', 'materialComponents'];
+  expandedElement: Spell | null;
   dataSource;
   
-  constructor(private apiService: ApiService) {
-  
-  }
+  constructor(private apiService: ApiService) { }
+
 
   ngOnInit(): void {
-    this.apiService.getItems().subscribe(items => {
-      console.log(items);
-      this.dataSource = new MatTableDataSource(items);
+    this.apiService.getSpells().subscribe(spells => {
+      console.log(spells);
+      this.dataSource = new MatTableDataSource(spells);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
@@ -51,4 +46,3 @@ export class ItemsComponent implements OnInit {
   }
 
 }
-
