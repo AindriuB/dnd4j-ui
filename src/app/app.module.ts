@@ -9,13 +9,15 @@ import { ItemsComponent } from './items/items.component';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SpellsComponent } from './spells/spells.component';
+import { FeatsComponent } from './feats/feats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ItemsComponent,
-    SpellsComponent
+    SpellsComponent,
+    FeatsComponent
   ],
   imports: [
     BrowserModule,

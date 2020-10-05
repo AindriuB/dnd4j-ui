@@ -4,3 +4,45 @@
         <p>This is a project to provide a bunch of d&d utilities</p>
     </mat-card-content>
 </mat-card>
+<mat-card>
+    <mat-card-title>Sources</mat-card-title>
+    <mat-card-content>
+        The sources in use: 
+        <mat-list>
+            <mat-list-item *ngFor="let source of stats.sources">
+                <span> {{source}} </span>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Stats</mat-card-title>
+    <mat-card-content>
+        <p>This application is currently aware of the following:</p>
+        <mat-list>
+            <mat-list-item>
+                <span>Items: {{stats.numItems}} </span>
+            </mat-list-item>
+            <mat-list-item>
+                <span>Spells: {{stats.numSpells}} </span>
+            </mat-list-item>
+            <mat-list-item>
+                <span>Feats: {{stats.numFeats}} </span>
+            </mat-list-item>
+            <mat-list-item>
+                <span>Classes: {{stats.numClasses}} </span>
+            </mat-list-item>
+            <mat-list-item>
+                <span>Races: {{stats.numRaces}} </span>
+            </mat-list-item>
+            <mat-list-item>
+                <span>Languages: {{stats.numLanguages}} </span>
+            </mat-list-item>
+            <mat-list-item>
+                <span>Backgrounds: {{stats.numBackgrounds}} </span>
+            </mat-list-item>
+
+        </mat-list>
+    </mat-card-content>
+</mat-card>
